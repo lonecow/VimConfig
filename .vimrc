@@ -26,6 +26,7 @@ Bundle "ervandew/supertab"
 Bundle "The-NERD-tree"
 Bundle "jwhitley/vim-matchit"
 Bundle "minibufexplorerpp"
+Bundle "Valloric/YouCompleteMe"
 " }}}
 
 let NERDChristmasTree = 1
@@ -55,6 +56,7 @@ set hlsearch
 set noswapfile
 
 "Key maps"
+:map <F2> :YcmCompleter GotoDefinition<CR>
 :map <F6> :FixWhitespace<CR>
 :map <F9> :NERDTreeToggle<CR>
 nnoremap <silent> <F4> :Rfindstring<CR>
