@@ -26,7 +26,9 @@ Bundle "ervandew/supertab"
 Bundle "The-NERD-tree"
 Bundle "jwhitley/vim-matchit"
 Bundle "minibufexplorerpp"
+if !(has("win32") || has("win16"))
 Bundle "Valloric/YouCompleteMe"
+endif
 " }}}
 
 let NERDChristmasTree = 1
