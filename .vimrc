@@ -27,7 +27,11 @@ Bundle "The-NERD-tree"
 Bundle "jwhitley/vim-matchit"
 Bundle "minibufexplorerpp"
 if !(has("win32") || has("win16"))
+" Bundles specific for non windows
 Bundle "Valloric/YouCompleteMe"
+else
+" Bundles specific for windows
+Bundle "davidhalter/jedi-vim"
 endif
 " }}}
 
