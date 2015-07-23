@@ -65,6 +65,8 @@ set noswapfile
 :map <F2> :YcmCompleter GotoDefinition<CR>
 :map <F6> :FixWhitespace<CR>
 :map <F9> :NERDTreeToggle<CR>
+"Resets search highlighting"
+:map <F10> :nohlsearch<CR>
 nnoremap <silent> <F4> :Rfindstring<CR>
 
 "sets the tabs to be 3 spaces"
