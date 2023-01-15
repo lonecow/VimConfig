@@ -1,39 +1,40 @@
-execute pathogen#infect()
-
-" adjust configuration for such hostile environment as Windows {{{
 if has("win32") || has("win16")
-" set the runtime path to include Vundle and initialize
-set rtp+=~/vimfiles/bundle/Vundle.vim/
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('/Program\ Files\ \(x86\)/Vim/vim74/plugin')
-call vundle#begin('~/vimfiles/bundle')
+   filetype off
+   set shellslash
+   set rtp+=~/.vim/plugin/Vundle.vim
+   call vundle#begin('~/.vim/plugin')
 else
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('/Program\ Files\ \(x86\)/Vim/vim74/plugin')
+   " set the runtime path to include Vundle and initialize
+   set rtp+=~/.vim/bundle/Vundle.vim
+   call vundle#begin()
 endif
-" }}}
-
-
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-" {{{ Plugins
-" --- Plugins from github
-Bundle "ervandew/supertab"
-Bundle "The-NERD-tree"
-Bundle "jwhitley/vim-matchit"
-Bundle "minibufexplorerpp"
-if !(has("win32") || has("win16"))
-" Bundles specific for non windows
-Bundle "Valloric/YouCompleteMe"
-else
-" Bundles specific for windows
-Bundle "davidhalter/jedi-vim"
-endif
-" }}}
+
+Plugin 'ervandew/supertab'
+Plugin 'The-NERD-tree'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'fholgado/minibufexpl.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 let NERDChristmasTree = 1
 
@@ -84,3 +85,4 @@ set backspace+=start,eol,indent
 "add arxml auto
 au BufNewFile,BufRead *.arxml setf xml
 
+set listchars=eol:¬,tab:→→,trail:~,extends:>,precedes:<,space:·
