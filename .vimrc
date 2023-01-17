@@ -77,7 +77,7 @@ set shiftwidth=3
 set expandtab
 
 "adds spelling mistake underlining"
-set spell
+"set spell"
 
 "fix silly backspace setting"
 set backspace+=start,eol,indent
